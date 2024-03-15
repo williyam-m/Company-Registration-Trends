@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Company Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+    .submit {
+  border: 0;
+  padding: 10px 100px;
+  background: #00ccff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.input {
+  border: 0;
+  padding: 10px 50px;
+  background: violet;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.menu{
+    width: 100%;
+    height: 50px;
+    background-color: #00ccff;
+}
+.leftmenu{
+    width: 50%;
+line-height: 10Px;
+    float: left;
+}
+.leftmenu h4{
+    padding-left: 50px;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    font-family: 'montserrat', sans-serif;
+}
+.left{
+margin-left:10%;
+}
+.box{
+border:2px solid #00ccff;
+padding: 5px 20px;
+color:#00ccff;
+}
+.box:hover{
+border:2px solid #00ccff;
+ background-color: #00ccff;
+color:white;
+}
+a{
+text-decoration:None;
+color:black;
+}
+.dash1{
+border-bottom:4px solid violet;
+}
+.dash{
+border-bottom:4px solid #00ccff;
+}
+.left{
+margin-left:5%;
+}
+.shadow{
+box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+margin-left:2%;
+margin-right:2%;
+}
+.shadowin{
+
+margin-left:2%;
+margin-right:2%;
+}
+footer{
+bottom:0;
+background-color: #00ccff;
+color:white;
+    width: 100%;
+}
+*{
+ font-family: 'montserrat', sans-serif ;
+ }
+</style>
+</head>
+
+<body>
+
+<div class="menu">
+
+            <div class="leftmenu">
+                <h4>AI - WORLD</h4>
+            </div>
+</div><br><br>
+    <!-- Website Title -->
+    <div align="center">
+        <h3>AI - Driven Exploration and Prediction of Company Registration</h3>
+    </div>
+
+
+    <!-- Prediction Area -->
+    <div class="prediction-area" >
+        <!-- Prediction Form -->
+        <h4 class="left">Predict Future</h4>
+        <div align="center">
+            <form action="/company-registration-trends/predict" method="POST">
+                <input class="input" name="year" type="number" placeholder="Enter Year">
+            <br><br><br>
+                 <button class="submit" type="submit">SUBMIT</button>
+                </form>
+        </div>
+  <br><br>
+            <div align="center">
+        <h4>{{ val }}</h4>
+    </div>
+
+<br><br>
+        <h4 class="left">Explore Historical Data</h4>
+         <div align="center">
+ <span class="box">
+        <a href="/plot">Explore</a>
+     </span><br><br><br>
+      <span class="box">
+        <a href="/dataset">View Dataset</a>
+             </span><br><br><br>
+    <span class="box">
+    <a href="/download">DOWNLOAD DATASET</a>
+        </span>
+         </div>
+<br><br>
+        <h3>About Dataset</h3><br>
+        <div class="shadow">
+
+            <div class="shadowin"><br>
+            <span class="dash1">CONTEXT</span><br>
+<p>Get data on master details of any company registered with Registrar of Companies (RoC). Data contains various information like CORPORATE_ IDENTIFICATION_NUMBER , Date of Registration and Sub Category.</p>
+        <br>
+            <span class="dash1">CONTENT</span><br>
+<p>The dataset file contains the details of all Indian companies ever registered in India from 1857 to 2020.</p>
+        <br>
+<p>No. of records - 1992170</p>
+
+<span class="dash1">COLUMNS</span><br><br>
+           <span class="dash">CORPORATE_ IDENTIFICATION_NUMBER</span><p> - Corporate Identification Number sometimes referred to as CIN is a unique identification number which is assigned by the ROC (Registrar of Companies) of various states under the MCA (Ministry of Corporate Affairs).</p><br><br>
+            <span class="dash">DATE_OF_ REGISTRATION</span><p>Date of registration of the company.</p><br><br>
+           <br><br>
+
+                <span class="dash1"> Acknowledgements</span><br>
+                <span>Source:</span><a href="https://data.gov.in/ministrydepartment/ministry-corporate-affairs"> Open Government Data (OGD) Platform India</a>
+           <br><br>
+            </div>
+        </div>
+    
+ <br><br> <br><br>
+    <footer>
+        <br><br>
+        <div align="center">
+            <b>DEVELOPED BY WILLIYAM M</b> <br>
+            <a href="https://www.linkedin.com/in/williyam-m-2b460b249/" ><i class="fa fa-linkedin" style="font-size:20px; color:white;"></i></a> &nbsp;&nbsp;
+            <a href="mailto:williyam64@gmail.com" ><i class="fa fa-envelope" style="font-size:18px; color:white;"></i></a>
+         </div>
+        <br><br>
+
+    </footer>
+
+
+</body>
+
+</html>

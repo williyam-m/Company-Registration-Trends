@@ -1,8 +1,7 @@
-import pickle
-import joblib
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from io import BytesIO
 import pandas as pd
+import numpy as np
 from flask import Flask, render_template, request, Response, send_file
 from sklearn.linear_model import LinearRegression
 
@@ -54,7 +53,7 @@ def predict():
         model = LinearRegression()
         model.fit(year_values, registration_counts)
 
-        # Predict registrations for 2025
+
         predicted_count = model.predict([[int(inputyear)]])
 
         return render_template('company.html', val = f' In {inputyear} Company registration count will be around \n {int(predicted_count)-5} to {int(predicted_count)+10}.')
@@ -63,7 +62,7 @@ def predict():
 
 @app.route('/plot')
 def plot():
-    """data = pd.read_csv("registrations.csv" , sep=',',on_bad_lines='skip', index_col=False, dtype='unicode')
+    data = pd.read_csv("registrations.csv" , sep=',',on_bad_lines='skip', index_col=False, dtype='unicode')
 
     # Convert 'year' column to datetime
     data['DATE_OF_REGISTRATION'] = pd.to_datetime(data['DATE_OF_REGISTRATION'], errors='coerce')
@@ -93,6 +92,7 @@ def plot():
     plt.figure(figsize=(10, 7))
     plt.plot(year_values, registration_counts, label='Actual Data')
     plt.plot(year_values, model.predict(year_values), label='Predicted Data', linestyle='dashed')
+
     plt.xlabel('Year')
     plt.ylabel('Registration Counts')
     plt.title('Company Registration Counts Over the Years')
@@ -102,8 +102,8 @@ def plot():
     plt.savefig(img, format='png')
     plt.close()
     img.seek(0)
-    return Response(img, mimetype='image/png')"""
-    return render_template('plot.html')
+    return Response(img, mimetype='image/png')
+
 
 @app.route('/download')
 def download():
